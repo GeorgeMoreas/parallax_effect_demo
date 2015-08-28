@@ -69,14 +69,14 @@
 	             
 	            	// init background 
 	            	bg = new Image();
-	                bg.src="stars.png";
+	                bg.src="https://cloud.githubusercontent.com/assets/13951475/9556815/50759188-4d8c-11e5-91e5-2a08cf5605fe.png";
 	                bg.onload = function(){
 	            	       //ctx.drawImage(bg,0,0);
 	                      // Now you can pass the `img` object to various functions
 	                };     
 	                       
 	               	moon = new Image();
-	                moon.src="moon.png";
+	                moon.src="https://cloud.githubusercontent.com/assets/13951475/9556786/5027629c-4d8c-11e5-9c01-bfb0d80757d0.png";
 	                moon.onload = function(){
 	            	       //ctx.drawImage(moon,200,20);
 	                      // Now you can pass the `img` object to various functions
@@ -84,28 +84,28 @@
 	             
 	            	// init cloud
 	            	mount1 = new Image();
-	            	mount1.src = "back_1.png";
+	            	mount1.src = "https://cloud.githubusercontent.com/assets/13951475/9556787/5028015c-4d8c-11e5-935b-7a0d55911ffc.png";
 	            	mount1.onload = function(){
 	           		   mount1_x = mount1.width;
 	            	   //ctx.drawImage(mount1, mount1_x, 120);
 	            	};
 	            	
 	            	mount2 = new Image();
-	            	mount2.src = "back_2.png";
+	            	mount2.src = "https://cloud.githubusercontent.com/assets/13951475/9556788/5029ee0e-4d8c-11e5-8279-b4cff041d61e.png";
 	            	mount2.onload = function(){
 	           		   mount2_x = mount2.width;
 	            	   //ctx.drawImage(mount2, mount2_x, 60);
 	            	};
 	            	            	
 	            	trees = new Image();
-	            	trees.src = "trees.png";
+	            	trees.src = "https://cloud.githubusercontent.com/assets/13951475/9556816/507ca9a0-4d8c-11e5-89a3-4c20f1664f8a.png";
 	            	trees.onload = function(){
 	           		   trees_x = trees.width;
 	            	   //ctx.drawImage(trees, trees_x, 20);
 	            	};
 	            	            	
 	            	ground = new Image();
-	            	ground.src = "ground.png";
+	            	ground.src = "https://cloud.githubusercontent.com/assets/13951475/9556789/502a2112-4d8c-11e5-8760-74cca1cf8153.png";
 	            	ground.onload = function(){
 	           		   ground_x = ground.width;
 	            	   //ctx.drawImage(ground, ground_x, 0);
@@ -114,12 +114,37 @@
 	               var i;
 	               for (i = 1; i <=	24; i++) {
 	            	   ball[i] = new Image();
-			   if (i >= 10) {
-			   	ball[i].src = "rolling_ball_" + i + ".png";
-			   }
-			   else {
-	         	   	ball[i].src = "rolling_ball_0" + i + ".png";
-			   }
+			   //if (i >= 10) {
+			   // 	ball[i].src = "rolling_ball_" + i + ".png";
+			   //}
+			   //else {
+	         	   //	ball[i].src = "rolling_ball_0" + i + ".png";
+			   //}
+			
+				ball[0].src = "https://cloud.githubusercontent.com/assets/13951475/9556790/502a4408-4d8c-11e5-89b3-a8c335a1efda.png";
+				ball[1].src = "https://cloud.githubusercontent.com/assets/13951475/9556791/502b1cd4-4d8c-11e5-8d95-d9999f8845cb.png";
+				ball[2].src = "https://cloud.githubusercontent.com/assets/13951475/9556793/503beb2c-4d8c-11e5-9f87-429204d08855.png";
+				ball[3].src = "https://cloud.githubusercontent.com/assets/13951475/9556792/50395fe2-4d8c-11e5-8625-2e4dc68f5157.png";
+				ball[4].src = "https://cloud.githubusercontent.com/assets/13951475/9556794/503ddcca-4d8c-11e5-8155-b354445b3ce8.png";
+				ball[5].src = "https://cloud.githubusercontent.com/assets/13951475/9556796/503efd58-4d8c-11e5-843e-f49820eb7684.png";
+				ball[6].src = "https://cloud.githubusercontent.com/assets/13951475/9556795/503ebd34-4d8c-11e5-84af-48a14f0d057f.png";
+				ball[7].src = "https://cloud.githubusercontent.com/assets/13951475/9556797/503f6c84-4d8c-11e5-8785-b79df6fdbd10.png";
+				ball[8].src = "https://cloud.githubusercontent.com/assets/13951475/9556798/5049d480-4d8c-11e5-9c65-0d8454495580.png";
+				ball[9].src = "https://cloud.githubusercontent.com/assets/13951475/9556799/504c6a9c-4d8c-11e5-929d-ce7e96659d35.png";
+				ball[10].src = "https://cloud.githubusercontent.com/assets/13951475/9556801/504febd6-4d8c-11e5-8273-c5143ee12c53.png";
+				ball[11].src = "https://cloud.githubusercontent.com/assets/13951475/9556800/504eee84-4d8c-11e5-81e1-0c47435d6e6e.png";
+				ball[12].src = "https://cloud.githubusercontent.com/assets/13951475/9556802/5051127c-4d8c-11e5-8d00-8197252139e1.png";
+				ball[13].src = "https://cloud.githubusercontent.com/assets/13951475/9556803/50516952-4d8c-11e5-9127-b1a69dbba943.png";
+				ball[14].src = "https://cloud.githubusercontent.com/assets/13951475/9556804/505b116e-4d8c-11e5-9577-1d8974edf0ee.png";
+				ball[15].src = "https://cloud.githubusercontent.com/assets/13951475/9556805/505e7f5c-4d8c-11e5-94a2-f20048795e94.png";
+				ball[16].src = "https://cloud.githubusercontent.com/assets/13951475/9556806/505fdf78-4d8c-11e5-8616-a89025ff042f.png";
+				ball[17].src = "https://cloud.githubusercontent.com/assets/13951475/9556809/5062a91a-4d8c-11e5-88dd-1300326cebf5.png";
+				ball[18].src = "https://cloud.githubusercontent.com/assets/13951475/9556808/506213ec-4d8c-11e5-8ac0-b351772c3dbf.png";
+				ball[19].src = "https://cloud.githubusercontent.com/assets/13951475/9556807/5060df86-4d8c-11e5-9b1a-d485f60cccb1.png";
+				ball[20].src = "https://cloud.githubusercontent.com/assets/13951475/9556810/506bd846-4d8c-11e5-86ae-8218e3eb1cb7.png";
+				ball[21].src = "https://cloud.githubusercontent.com/assets/13951475/9556811/5070520e-4d8c-11e5-9735-ddb492f65c6c.png";
+				ball[22].src = "https://cloud.githubusercontent.com/assets/13951475/9556813/5070a7f4-4d8c-11e5-9bc4-f31090f50118.png";
+				ball[23].src = "https://cloud.githubusercontent.com/assets/13951475/9556812/5070a416-4d8c-11e5-8f35-badcd3370958.png";
 				
 			   //ball[i].width = 50;
 			   //ball[i].height = 50;
