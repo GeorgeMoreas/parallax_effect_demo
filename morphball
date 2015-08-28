@@ -1,6 +1,6 @@
 <html>
 	<head>
-	    <script src="http://www.html5canvastutorials.com/libraries/kinetic-v3.6.0.js">
+	    <script src="https://teikn-js.googlecode.com/svn-history/r23/trunk/libraries/kinetic-v3.6.0.js">
 	    </script>
 	    <script>
 	
