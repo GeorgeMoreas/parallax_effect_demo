@@ -221,8 +221,8 @@
 	 	       }
 	
 	 	       wait++;
-	 	       if (ballX > widthImg + 100) {
-	 	          ballX = -100;
+	 	       if (ballX > widthImg + 10) {
+	 	          ballX = -50;
 	 	       }
 	 	       else {
 	 	          ballX++;
