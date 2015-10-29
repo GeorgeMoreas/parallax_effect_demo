@@ -16,6 +16,7 @@
 	            var heightImg = 600;
 	            
 	            var mount1_x;
+	            var vol_x;
 	            var mount2_x;
 	            var trees_x;
 	            var ground_x;
@@ -23,6 +24,7 @@
 	            var bg;
 	            var moon;
 	            var mount1;
+	            var vol;
 	            var mount2;
 	            var trees;
 	            var ground;
@@ -96,6 +98,13 @@
 	           		   mount2_x = mount2.width;
 	            	   //ctx.drawImage(mount2, mount2_x, 60);
 	            	};
+					
+	            	vol = new Image();
+	            	vol.src = "file:///C:/Users/gmoreas/Downloads/vol.png";
+	            	vol.onload = function(){
+	           		   vol_x = vol.width;
+	            	   //ctx.drawImage(vol, vol_x, 60);
+	            	};
 	            	            	
 	            	trees = new Image();
 	            	trees.src = "https://cloud.githubusercontent.com/assets/13951475/9556816/507ca9a0-4d8c-11e5-89a3-4c20f1664f8a.png";
@@ -112,8 +121,9 @@
 	            	};
 	            
 	               var i;
-	               for (i = 1; i <=	24; i++) {
+	               for (i = 0; i <= 23; i++) {
 	            	   ball[i] = new Image();
+				   
 			   //if (i >= 10) {
 			   // 	ball[i].src = "rolling_ball_" + i + ".png";
 			   //}
@@ -121,6 +131,16 @@
 	         	   //	ball[i].src = "rolling_ball_0" + i + ".png";
 			   //}
 			
+				
+			   //ball[i].width = 50;
+			   //ball[i].height = 50;
+	
+	             	   ball[i].onload = function(){
+	                   	//ctx.drawImage(ball[i], 520, 735);
+	               	   }
+				
+	               }
+	            	
 				ball[0].src = "https://cloud.githubusercontent.com/assets/13951475/9556790/502a4408-4d8c-11e5-89b3-a8c335a1efda.png";
 				ball[1].src = "https://cloud.githubusercontent.com/assets/13951475/9556791/502b1cd4-4d8c-11e5-8d95-d9999f8845cb.png";
 				ball[2].src = "https://cloud.githubusercontent.com/assets/13951475/9556793/503beb2c-4d8c-11e5-9f87-429204d08855.png";
@@ -145,22 +165,16 @@
 				ball[21].src = "https://cloud.githubusercontent.com/assets/13951475/9556811/5070520e-4d8c-11e5-9735-ddb492f65c6c.png";
 				ball[22].src = "https://cloud.githubusercontent.com/assets/13951475/9556813/5070a7f4-4d8c-11e5-9bc4-f31090f50118.png";
 				ball[23].src = "https://cloud.githubusercontent.com/assets/13951475/9556812/5070a416-4d8c-11e5-8f35-badcd3370958.png";
-				
-			   //ball[i].width = 50;
-			   //ball[i].height = 50;
-	
-	             	   ball[i].onload = function(){
-	                   	//ctx.drawImage(ball[i], 520, 735);
-	               	   }
-				
-	               }
-	            	
 	             
 	            	return setInterval(main_loop, 10);
 	            }
 	             
 	            function update(){
-	            	mount1_x -= 0.1 * mx;
+	            	vol_x -= 0.1 * mx;
+	            	if (vol_x < 0 ) {
+	            		vol_x = vol.width;
+	            	}
+	            	mount1_x -= 0.2 * mx;
 	            	if (mount1_x < 0 ) {
 	            		mount1_x = mount1.width;
 	            	}
@@ -200,6 +214,9 @@
 	            	ctx.drawImage(mount1, mount1_x, 120 + my + jumpY);
 	            	ctx.drawImage(mount1, mount1_x-mount1.width, 120 + my + jumpY);
 	            	ctx.drawImage(mount1, mount1_x+mount1.width, 120 + my + jumpY);
+	            	ctx.drawImage(vol, vol_x, 90 - my - jumpY);
+	            	ctx.drawImage(vol, vol_x-vol.width, 90 - my - jumpY);
+	            	ctx.drawImage(vol, vol_x+vol.width, 90 - my - jumpY);
 	            	ctx.drawImage(mount2, mount2_x, 60 - my - jumpY);
 	            	ctx.drawImage(mount2, mount2_x-mount2.width, 60 - my - jumpY);
 	            	ctx.drawImage(mount2, mount2_x+mount2.width, 60 - my - jumpY);
@@ -211,11 +228,11 @@
 	            	ctx.drawImage(ground, ground_x+ground.width, 0 - my * 6 - jumpY * 6);
 	            	 
 	           	 if (wait >= 6 - mx) {
-	           	   if (frameNum < 24) {
+	           	   if (frameNum < 23) {
 	            	       frameNum++;
 	         	   }
 	         	   else {
-	         	       frameNum = 1;
+	         	       frameNum = 0;
 	      	         }
 	      	       wait = 0;
 	 	       }
