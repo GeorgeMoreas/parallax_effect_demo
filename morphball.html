@@ -33,7 +33,7 @@
 	            var frameNum = 1;
 	            
 	            var wait = 0;
-	            var ballX = -100;
+	            var ballX = 0;
 	            var ballY = 0;
 	
 		    var mx = 1;
@@ -100,9 +100,9 @@
 	            	};
 					
 	            	vol = new Image();
-	            	vol.src = "file:///C:/Users/gmoreas/Downloads/vol.png";
+	            	vol.src = "file:///Users/admin/Downloads/v.png";
 	            	vol.onload = function(){
-	           		   vol_x = vol.width;
+	           		   vol_x = widthImg;
 	            	   //ctx.drawImage(vol, vol_x, 60);
 	            	};
 	            	            	
@@ -170,23 +170,23 @@
 	            }
 	             
 	            function update(){
-	            	vol_x -= 0.1 * mx;
-	            	if (vol_x < 0 ) {
-	            		vol_x = vol.width;
-	            	}
-	            	mount1_x -= 0.2 * mx;
-	            	if (mount1_x < 0 ) {
+	            	mount1_x -= 0.3 * mx;
+	            	if (mount1_x < 0) {
 	            		mount1_x = mount1.width;
 	            	}
-	            	mount2_x -= 0.3 * mx;
+	            	vol_x -= 0.5 * mx;
+	            	if (vol_x < 0 - vol.width) {
+	            		vol_x = widthImg;
+	            	}
+	            	mount2_x -= 0.8 * mx;
 	            	if (mount2_x < 0 ) {
 	            		mount2_x = mount2.width;
 	            	}
-	            	trees_x -= 0.9 * mx;
+	            	trees_x -= 1.3 * mx;
 	            	if (trees_x < 0 ) {
 	            		trees_x = trees.width;
 	            	}
-	            	ground_x -= 2.7 * mx;
+	            	ground_x -= 3.4 * mx;
 	            	if (ground_x < 0 ) {
 	            		ground_x = ground.width;
 	            	}
@@ -215,8 +215,8 @@
 	            	ctx.drawImage(mount1, mount1_x-mount1.width, 120 + my + jumpY);
 	            	ctx.drawImage(mount1, mount1_x+mount1.width, 120 + my + jumpY);
 	            	ctx.drawImage(vol, vol_x, 90 - my - jumpY);
-	            	ctx.drawImage(vol, vol_x-vol.width, 90 - my - jumpY);
-	            	ctx.drawImage(vol, vol_x+vol.width, 90 - my - jumpY);
+	            	//ctx.drawImage(vol, vol_x-vol.width, 90 - my - jumpY);
+	            	//ctx.drawImage(vol, vol_x+vol.width, 90 - my - jumpY);
 	            	ctx.drawImage(mount2, mount2_x, 60 - my - jumpY);
 	            	ctx.drawImage(mount2, mount2_x-mount2.width, 60 - my - jumpY);
 	            	ctx.drawImage(mount2, mount2_x+mount2.width, 60 - my - jumpY);
@@ -242,7 +242,7 @@
 	 	          ballX = -50;
 	 	       }
 	 	       else {
-	 	          ballX++;
+	 	          ballX += 0.3;
 	         }
 	
 	         	   ctx.drawImage(ball[frameNum], ballX, 451 - my * 6 + ballY + (50 - 50 * stretch), 50 / stretch, 50 * stretch);
