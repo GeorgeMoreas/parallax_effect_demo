@@ -47,13 +47,13 @@
 	
 	function keydownControl(e) {
 	    if(e.keyCode==37) {
-	        mx <= 1 ? mx : mx--;
+	        mx <= 1 ? mx : mx -= 3;
 	    } else
 	    if (e.keyCode==38) {
 	        my <= -15 ? my : my--;
 	    } else if
 	    (e.keyCode==39) {
-	        mx >= 20 ? mx : mx++;
+	        mx >= 50 ? mx : mx += 3;
 	    } else
 	    if (e.keyCode==40) {
 	        my >= 0 ? my : my++;
